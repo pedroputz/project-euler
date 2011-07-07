@@ -5,5 +5,4 @@ numbersTotal = 0
 
 total.to_s.split(//).each { |number| numbersTotal += number.to_i }
 
-puts total
 puts numbersTotal
