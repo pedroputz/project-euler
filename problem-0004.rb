@@ -13,7 +13,7 @@ numbers = []
 
 begin
   if (value01 * value02).palindrome?
-    numbers << value01 * value02 if (value01 * value02).to_s.size() == 6
+    numbers << value01 * value02
   end
 
   value02 -= 1 if value01 == 101
