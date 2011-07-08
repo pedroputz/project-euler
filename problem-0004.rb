@@ -8,16 +8,16 @@ class Fixnum
   end
 end
 
-value01, value02 = 999, 999
-numbers = []
+number01, number02 = 999, 999
+palindromes = []
 
 begin
-  if (value01 * value02).palindrome?
-    numbers << value01 * value02
+  if (number01 * number02).palindrome?
+    palindromes << number01 * number02
   end
 
-  value02 -= 1 if value01 == 101
-  value01 = (value01 == 101) ? (999) : (value01 - 1)
-end while value02 > 100
+  number02 -= 1 if number01 == 101
+  number01 = (number01 == 101) ? (999) : (number01 - 1)
+end while number02 > 100
 
-puts numbers.uniq.sort.last
+puts palindromes.uniq.sort.last
