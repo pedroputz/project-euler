@@ -1,12 +1,4 @@
-class Fixnum
-  def palindrome?
-    if self.to_s == self.to_s.reverse
-      return true
-    else
-      return false
-    end
-  end
-end
+require_relative 'support/mathfunctions'
 
 number01, number02 = 999, 999
 palindromes = []

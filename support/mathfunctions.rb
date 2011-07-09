@@ -13,6 +13,10 @@ class Fixnum
     return numbers
   end
 
+  def palindrome?
+    return palindrome = (self.to_s == self.to_s.reverse) ? (true) : (false)
+  end
+
   def prime?
     return prime = (self.factors.delete_if{ |item| item == self }.length == 0) ? (true) : (false)
   end
