@@ -1,14 +1,22 @@
 class Fixnum
   def factors
     numbers, number, value = [], 2, self
-    begin
+
+    while value.even?
+      value = value / number
+      numbers << number
+    end
+
+    number += 1
+
+    while number <= value
       if value % number == 0
         value = value / number
         numbers << number
       else
-        number += 1
+        number += 2
       end
-    end while number <= value
+    end
 
     return numbers
   end
