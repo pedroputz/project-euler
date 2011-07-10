@@ -1,16 +1,18 @@
 value = 2000000
 limit = Math.sqrt(value).to_i
-numbers, position, sum = [], 0, 0
+primeNumbers, number, item, sum = [2], 3, 0, 0
 
-2.upto(value) do |number|
-  numbers << number
+while number < value
+  primeNumbers << number
+  number +=2
 end
 
-begin
-  numbers.delete_if { |item| item > numbers[position] && item % numbers[position] == 0 }
-  position += 1
-end while numbers[position] <= limit
+while primeNumbers[item] <= limit
+  prime = primeNumbers[item]
+  primeNumbers.delete_if { |value| value > prime && value % prime == 0 }
+  item += 1
+end
 
-numbers.each { |item| sum += item }
+primeNumbers.each { |value| sum += value }
 
 puts sum
