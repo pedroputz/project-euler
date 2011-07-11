@@ -1,4 +1,17 @@
 class Fixnum
+  def divisors
+    divisors, number, value = [1], 2, self
+
+    while number <= value/2
+      divisors << number if value % number == 0
+      number += 1
+    end
+
+    divisors << value
+
+    return divisors.uniq.sort
+  end
+
   def palindrome?
     return palindrome = (self.to_s == self.to_s.reverse) ? (true) : (false)
   end
@@ -8,11 +21,11 @@ class Fixnum
   end
 
   def prime_factors
-    numbers, number, value = [], 2, self
+    primes, number, value = [], 2, self
 
     while value.even?
       value = value / number
-      numbers << number
+      primes << number
     end
 
     number += 1
@@ -20,7 +33,7 @@ class Fixnum
     while number <= value
       if value % number == 0
         value = value / number
-        numbers << number
+        primes << number
       else
         number += 2
       end
