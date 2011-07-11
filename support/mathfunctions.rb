@@ -1,15 +1,13 @@
 class Fixnum
-  def divisors
-    divisors, number, value = [1], 2, self
+  def number_of_divisors
+    divisors, number, value, limit = [1], 2, self, Math.sqrt(self).to_i
 
-    while number <= value/2
+    while number <= limit
       divisors << number if value % number == 0
       number += 1
     end
 
-    divisors << value
-
-    return divisors.uniq.sort
+    return divisors.length * 2
   end
 
   def palindrome?
@@ -39,6 +37,6 @@ class Fixnum
       end
     end
 
-    return numbers
+    return primes
   end
 end

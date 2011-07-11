@@ -1,6 +1,6 @@
 require_relative 'support/mathfunctions'
 
-triangleNumber, triangleNumberLength, number, limit = 0, 0, 1, 20
+triangleNumber, triangleNumberLength, number, limit = 0, 0, 1, 500
 
 startTime = Time.utc(*Time.new.to_a)
 
@@ -8,7 +8,7 @@ begin
   triangleNumber += number
 
   if triangleNumber.even?
-    triangleNumberLength = triangleNumber.divisors.length
+    triangleNumberLength = triangleNumber.number_of_divisors
     break if triangleNumberLength >= limit
   end
 
