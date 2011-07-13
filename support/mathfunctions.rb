@@ -1,4 +1,15 @@
 class Fixnum
+  def divisors
+    divisors, number, value, limit = [1], 2, self, self/2
+
+    while number <= limit
+      divisors << number if value % number == 0
+      number += 1
+    end
+
+    return divisors.sort
+  end
+
   def number_of_divisors
     divisors, number, value, limit = [1], 2, self, Math.sqrt(self).to_i
 
