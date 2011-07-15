@@ -11,10 +11,10 @@ def sum_of_all_the_primes_below limit
   return sum
 end
 
-def ruby_answer
+def ruby_sum_of_all_the_primes_below limit
   primesSum = 0
 
-  Prime.each(2000000) do |prime|
+  Prime.each(limit) do |prime|
      primesSum += prime
   end
 
@@ -22,4 +22,4 @@ def ruby_answer
 end
 
 benchmark { sum_of_all_the_primes_below 2000000 }
-benchmark { ruby_answer }
+benchmark { ruby_sum_of_all_the_primes_below 2000000 }
