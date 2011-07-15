@@ -1,12 +1,18 @@
-sequence = [1,2]
-sum = 0
+require_relative 'support/benchmark'
 
-begin
-  a,b = sequence.last(2)
-  break if a + b > 4000000
-  sequence << a + b
-end while sequence.last < 4000000
+def sum_of_the_even_terms_below limit
+  sequence = [1,2]
+  sum = 0
 
-sequence.each { |item| sum += item if item.even? }
+  begin
+    a,b = sequence.last(2)
+    break if a + b > limit
+    sequence << a + b
+  end while sequence.last < limit
 
-puts sum
+  sequence.each { |item| sum += item if item.even? }
+
+  return sum
+end
+
+benchmark { sum_of_the_even_terms_below 4000000 }
