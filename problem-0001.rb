@@ -1,6 +1,6 @@
 require_relative 'support/benchmark'
 
-def sum_of_all_the_multiples_of_3_or_5_below (limit)
+def sum_of_all_the_multiples_of_3_or_5_below limit
   sum = 0
 
   3.upto(limit) do |number|

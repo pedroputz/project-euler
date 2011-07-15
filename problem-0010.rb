@@ -2,10 +2,10 @@ require_relative 'support/benchmark'
 require_relative 'support/mathfunctions'
 require 'mathn'
 
-def answer
+def sum_of_all_the_primes_below limit
   sum = 0
 
-  primes = 2000000.total_of_primes
+  primes = limit.total_of_primes
   primes.each { |value| sum += value }
 
   return sum
@@ -21,5 +21,5 @@ def ruby_answer
   return primesSum
 end
 
-benchmark { answer }
+benchmark { sum_of_all_the_primes_below 2000000 }
 benchmark { ruby_answer }
