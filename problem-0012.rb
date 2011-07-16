@@ -1,23 +1,23 @@
+require_relative 'support/benchmark'
 require_relative 'support/mathfunctions'
 
-triangleNumber, triangleNumberLength, number, limit = 0, 0, 1, 500
 
-startTime = Time.utc(*Time.new.to_a)
+def triangle_number_with_divisors limit
+  triangleNumber, triangleNumberLength, number = 0, 0, 1
 
-begin
-  triangleNumber += number
+  begin
+    triangleNumber += number
 
-  if triangleNumber.even?
-    triangleNumberLength = triangleNumber.number_of_divisors
-    break if triangleNumberLength >= limit
-  end
+    if triangleNumber.even?
+      triangleNumberLength = triangleNumber.number_of_divisors
+      break if triangleNumberLength >= limit
+    end
 
-  number += 1
+    number += 1
 
-end while triangleNumber > 0
+  end while triangleNumber > 0
 
-endTime = Time.utc(*Time.new.to_a)
+  return triangleNumber
+end
 
-puts startTime
-puts endTime
-puts triangleNumber
+benchmark { triangle_number_with_divisors 500 }
