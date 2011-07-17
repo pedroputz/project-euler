@@ -7,7 +7,7 @@ class Fixnum
       number += 1
     end
 
-    return divisors.sort
+    return divisors.sort.uniq
   end
 
   def number_of_divisors
