@@ -1,6 +1,6 @@
 class Fixnum
   def divisors
-    divisors, number, value, limit = [1], 2, self, self/2
+    divisors, number, value, limit = [1, self], 2, self, self/2
 
     while number <= limit
       divisors << number if value % number == 0
