@@ -1,4 +1,10 @@
 class Fixnum
+  def factorial
+    number, total = self, 1
+    number.downto(1) { |n| total *= n }
+    return total
+  end
+
   def divisors
     divisors, number, value, limit = [1, self], 2, self, self/2
 
